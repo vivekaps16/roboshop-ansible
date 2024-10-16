@@ -1,16 +1,17 @@
 - name: Install Cache on server
-  ansible.builtin.dnf:
+  ansible.builtin.dnf: dnf makecache -y 
     name: cache
     state: latest
 
 - name: module disable nginx -y
-  ansible.builtin.dnf:
-    name: nginx
-    state: absent
+  ansible.builtin.dnf: dnf module disable nginx -y
 
+- name: module disable nginx -y
+  ansible.builtin.dnf: dnf module enable nginx:1.24 -y  
+  
 - name: Remove file (delete file)
   ansible.builtin.file:
-    path: /usr/share/nginx/html/*
+    path: /usr/share/nginx/html
     state: absent
 
 - name: cp -r nginx.conf /etc/nginx/nginx.conf
@@ -27,14 +28,9 @@
 - name: Download frontend.zip
   ansible.builtin.get_url:
     url: curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
-    dest: /tmp/
-   
-- name: unzip /tmp/frontend.zip
-  ansible.builtin.unarchive:
-    src: /tmp/
     dest: /usr/share/nginx/html
-
-
+    remote_src: yes
+   
 - name: systemctl restart nginx
   ansible.builtin.service:
     name: nginx
