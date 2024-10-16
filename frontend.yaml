@@ -3,5 +3,6 @@
   tasks:
     - name: module disable nginx -y
       ansible.builtin.dnf: dnf module disable nginx -y
+      
     - name: module disable nginx -y
       ansible.builtin.dnf: dnf module enable nginx:1.24 -y  
