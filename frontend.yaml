@@ -1,5 +1,5 @@
-- name: Install Cache on server
-  ansible.builtin.dnf: dnf makecache -y 
+#- name: Install Cache on server
+# ansible.builtin.dnf: dnf makecache -y 
     
 - name: module disable nginx -y
   ansible.builtin.dnf: dnf module disable nginx -y
