@@ -1,0 +1,6 @@
+- name: testing
+  hosts: all
+  tasks:
+  - name: Print the syntax Testing of yaml extention 
+    ansible.builtin.debug:
+    msg: Testing of Yaml extention installed on VS Code.
