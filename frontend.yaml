@@ -24,19 +24,19 @@
        src: nginx.conf
        dest: /etc/nginx/nginx.conf
 
-    - name: systemctl start nginx
+    - name: Start Nginx service
       ansible.builtin.shell: systemctl start nginx
       #  name: nginx
      #   state: started
     #    enabled: yes
    
-    - name: Download frontend.zip
+    - name: Download frontend zip content
       ansible.builtin.get_url:
         url: curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
         dest: /usr/share/nginx/html
         remote_src: yes
      
-    - name: systemctl restart nginx
+    - name: Restart nginx servfice
       ansible.builtin.service: systemctl restart nginx
         #name: nginx
         #state: restarted
