@@ -6,35 +6,4 @@
     msg: Testing of Yaml extention installed on VS Code.
 
 
-    - name: Install Nginx
-      ansible.builtin.shell: dnf install nginx -y
-      name: nginx
-      state: installed
-
-    - name: Remove file (delete file)
-      ansible.builtin.template:
-        path: /usr/share/nginx/html
-        state: absent
   
-    - name: cp -r nginx.conf /etc/nginx/nginx.conf
-      ansible.builtin.copy:
-        src: nginx.conf
-        dest: /etc/nginx/nginx.conf
-     
-    - name: systemctl start nginx
-      ansible.builtin.service:
-        name: nginx
-        state: started
-        enabled: yes
-   
-    - name: Download frontend.zip
-      ansible.builtin.get_url:
-        url: curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
-        dest: /usr/share/nginx/html
-        remote_src: yes
-     
-    - name: systemctl restart nginx
-      ansible.builtin.service:
-        name: nginx
-        state: restarted
-        enabled: yes
