@@ -37,7 +37,7 @@
         remote_src: yes
      
     - name: Restart nginx servfice
-      ansible.builtin.service: systemctl restart nginx
+      ansible.builtin.shell: systemctl restart nginx
         #name: nginx
         #state: restarted
         #enabled: yes  
