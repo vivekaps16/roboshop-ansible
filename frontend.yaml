@@ -13,5 +13,9 @@
     
     - name: Install Nginx
       ansible.builtin.shell: dnf install nginx -y
-      
+
+    - name: Remove file (delete file)
+      ansible.builtin.template:
+        path: /usr/share/nginx/html
+        state: absent  
 
