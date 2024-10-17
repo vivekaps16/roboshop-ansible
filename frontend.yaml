@@ -30,11 +30,11 @@
      #   state: started
     #    enabled: yes
    
-    - name: Download frontend zip content
-      ansible.builtin.get_url:
-        url: curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
-        dest: /usr/share/nginx/html
-        remote_src: yes
+    - name: Download and extract application content
+      ansible.builtin.unarchive:
+      src: https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
+      dest: /usr/share/nginx/html
+      remote_src: yes
      
     - name: Restart nginx servfice
       ansible.builtin.shell: systemctl restart nginx
