@@ -6,7 +6,7 @@
     msg: Testing of Yaml extention installed on VS Code.
 
 
-        - name: Install Nginx
+    - name: Install Nginx
       ansible.builtin.shell: dnf install nginx -y
       name: nginx
       state: installed
