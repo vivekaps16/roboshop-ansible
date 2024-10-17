@@ -1,8 +1,9 @@
 - name: demo variables
   hosts: all
-   vars:
+  connection: local
+  vars:
     URL: vars.google.com
   tasks: 
-   - name: print URL
-     ansible.builtin.debug:
-       msg: URL {{ URL }}
+    - name: print URL
+      ansible.builtin.debug:
+        msg: URL {{ URL }}
