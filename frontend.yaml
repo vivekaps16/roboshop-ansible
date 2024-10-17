@@ -15,7 +15,11 @@
       ansible.builtin.shell: dnf install nginx -y
 
     - name: Remove file (delete file)
-      ansible.builtin.template:
+      ansible.builtin.file:
         path: /usr/share/nginx/html
         state: absent  
-
+    
+     - name: cp -r nginx.conf /etc/nginx/nginx.conf
+       ansible.builtin.copy:
+        src: nginx.conf
+        dest: /etc/nginx/nginx.conf
