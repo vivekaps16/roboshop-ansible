@@ -35,6 +35,11 @@
 - name: Load Master Data
   ansible.builtin.shell: mongosh --host mongodb-{{ env }}.devopspractice.info </app/db/master-data.js
 
+- name: Restart daemon Service
+  ansible.builtin.systemd_service:
+    name: daemon
+    state: restarted
+
 - name: Restart Catalogue Service
   ansible.builtin.systemd_service:
     name: catalogue
