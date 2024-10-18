@@ -17,7 +17,10 @@
 #systemctl enable mongod &>>$log_file
 #systemctl restart mongod &>>$log_file
 #status_check $?
-
+- name: Set a hostname
+  ansible.builtin.hostname:
+    name: mongodb
+    
 - name: Copy mongodb repo file
   ansible.builtin.copy:
     src: mongodb.repo
