@@ -1,6 +1,6 @@
 #go for app pre requesites
 
-- nmae: Add app /usr/share/nginx/html
+- name: Add app /usr/share/nginx/html
   ansible.builtin.user:
     name: roboshop
 
