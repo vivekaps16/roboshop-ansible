@@ -12,8 +12,18 @@
  - name: Remove file (delete file)
    ansible.builtin.file:
      path: /usr/share/nginx/html
-     state: absent  
- 
+     state: absent   
+ - name: Create application directory
+   ansible.builtin.file:
+     path: /usr/share/nginx/html
+     state: directory
+
+ - name: Download and extract application content
+   ansible.builtin.unarchive: 
+     src: https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
+     dest: /usr/share/nginx/html
+     remote_src: yes 
+
  - name: copy nginx file
    ansible.builtin.template:
     src: nginx.conf
@@ -31,8 +41,8 @@
 #     dest: /usr/share/nginx/html/
 #     remote_src: yes
   
-# - name: Restart nginx servfice
-#   ansible.builtin.shell: systemctl restart nginx
-#     #name: nginx
-#     #state: restarted
-#     #enabled: yes  
+ - name: Restart nginx servfice
+   ansible.builtin.shell: systemctl restart nginx
+     #name: nginx
+     #state: restarted
+     #enabled: yes  
