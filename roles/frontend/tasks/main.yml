@@ -30,9 +30,15 @@
     dest: /etc/nginx/nginx.conf
  
  - name: ReStart Nginx service
-   ansible.builtin.systemd_service: systemctl start nginx
-     state: restart
+   ansible.builtin.systemd_service: systemctl restart nginx
+
+ - name: Enable service nginx and not touch the state
+   ansible.builtin.service:
+     name: nginx
      enabled: yes
+
+     #state: restart
+     #enabled: yes
 
 # - name: Create application directory
 #   ansible.builtin.file:
