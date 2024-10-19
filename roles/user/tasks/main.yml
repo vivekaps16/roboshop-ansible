@@ -13,9 +13,9 @@
     state: installed
 
 - name: Copy user.service
-  ansible.builtin.copy:
-    src: user.service
-    dest: /etc/systemd/system/user.service
+  nsible.builtin.template:
+    src: "{{ app_name }}.service"
+    dest: /etc/systemd/system/"{{ app_name }}.service"
 
 - name: Restart redis service
   ansible.builtin.systemd_service:
