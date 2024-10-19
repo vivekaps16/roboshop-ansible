@@ -19,34 +19,25 @@
 #systemctl restart catalogue &>>$log_file
 #status_check $?
 
-- name:  Disable NodeJS Default Version
+- name: Disable Default NodeJS
   ansible.builtin.shell: dnf module disable nodejs -y
 
-- name:  Enable NodejS 20 Module
+- name: Enable NodeJS 20
   ansible.builtin.shell: dnf module enable nodejs:20 -y
 
-- name:  Install Nodejs
+- name: Install NodeJS
   ansible.builtin.dnf:
     name: nodejs
-    state: latest
+    state: installed
 
-- name: Setup App Prerequisites
-  ansible.builtin.include_role:
-    name: common
-    tasks_from: app-prereq
+- name: Load App Prerequisites
+  ansible.builtin.include_tasks:
+    file: app_prerequisites.yml
 
-- name:  Download NodeJS Dependencies
-  ansible.builtin.shell: npm install # there could be a npm module, However we are still using shell, Since these steps will get removed when CI comes in.
-  args:
-    chdir: "{{ app_path }}"
-
-- name: Load Schema
-  ansible.builtin.include_role:
-    name: common
-    tasks_from: schema
-  when: schema_setup is defined
+- name: Install NodeJS Dependencies
+  community.general.npm:
+    path: /app
 
 - name: SystemD setup
-  ansible.builtin.include_role:
-    name: common
-    tasks_from: systemd
+  ansible.builtin.include_tasks:
+    file: systemd_setup.yml
