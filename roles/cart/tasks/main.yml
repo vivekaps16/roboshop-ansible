@@ -12,7 +12,7 @@
     name: redis
     state: installed
 
-- name: Copy user.service
+- name: Copy user service file
   nsible.builtin.template:
     src: "{{ app_name }}.service"
     dest: /etc/systemd/system/"{{ app_name }}.service"
