@@ -13,7 +13,7 @@
     state: installed
 
 - name: Copy user.service
-  nsible.builtin.template:
+  ansible.builtin.template:
     src: "{{ app_name }}.service"
     dest: /etc/systemd/system/"{{ app_name }}.service"
 
