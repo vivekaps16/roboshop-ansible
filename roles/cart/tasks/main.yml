@@ -1,0 +1,24 @@
+- name: Set Prompt
+  ansible.builtin.shell: set-prompt {{ app_name }}-{{ env }}
+
+- name: Disable redis Default
+  ansible.builtin.shell: dnf module disable redis -y
+
+- name: Enable redis Default
+  ansible.builtin.shell: dnf module enable redis:7 -y
+
+- name: Install redis 
+  ansible.builtin.dnf: 
+    name: redis
+    state: installed
+
+- name: Copy user.service
+  ansible.builtin.copy:
+    src: user.service
+    dest: /etc/systemd/system/user.service
+
+- name: Restart redis service
+  ansible.builtin.systemd_service:
+    name: redis
+    state: restarted 
+    enabled: yes
