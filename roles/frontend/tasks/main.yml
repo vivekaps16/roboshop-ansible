@@ -44,8 +44,7 @@
 #     dest: /usr/share/nginx/html/
 #     remote_src: yes
   
- - name: Restart nginx servfice
+ - name: Restart nginx service
    ansible.builtin.shell: systemctl restart nginx
-     #name: nginx
-     #state: restarted
-     #enabled: yes  
+     state: restart
+     enabled: yes  
