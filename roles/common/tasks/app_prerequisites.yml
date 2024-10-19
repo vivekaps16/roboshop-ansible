@@ -1,22 +1,41 @@
 #go for app pre requesites
 
-- name: Add Application User
+#- name: Add Application User
+#  ansible.builtin.user:
+#    name: roboshop
+#
+#- name: Delete old app directory
+#  ansible.builtin.file:
+#    path: /app
+#    state: absent
+#
+#- name: Create App directory
+#  ansible.builtin.file:
+#    path: /app
+#    state: directory
+#
+#- name: Download and extract application content
+#  ansible.builtin.unarchive: 
+#    src: https://roboshop-artifacts.s3.amazonaws.com/{{ app_name }}-v3.zip
+#    dest: /app
+#    remote_src: yes 
+
+- name: Adding Application User
   ansible.builtin.user:
     name: roboshop
 
-- name: Delete old app directory
+- name: Remove old content
   ansible.builtin.file:
-    path: /app
+    path: "{{ app_path }}"
     state: absent
 
-- name: Create App directory
+- name: Create App Directory
   ansible.builtin.file:
-    path: /app
+    path: "{{ app_path }}"
     state: directory
 
-- name: Download and extract application content
-  ansible.builtin.unarchive: 
-    src: https://roboshop-artifacts.s3.amazonaws.com/{{ app_name }}-v3.zip
-    dest: /app
-    remote_src: yes 
-
+- name: Download & Extract Application Content
+  ansible.builtin.unarchive:
+    src: https://roboshop-artifacts.s3.amazonaws.com/{{component}}-v3.zip
+    dest: "{{ app_path}}"
+    remote_src: yes
