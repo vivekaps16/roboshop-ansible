@@ -28,18 +28,8 @@
    ansible.builtin.template:
     src: nginx.conf
     dest: /etc/nginx/nginx.conf
- 
- - name: ReStart Nginx service
-   ansible.builtin.systemd_service: systemctl restart nginx
-
- - name: Enable service nginx and not touch the state
-   ansible.builtin.service:
-     name: nginx
-     enabled: yes
-
-     #state: restart
-     #enabled: yes
-
+ - name: Start Nginx service
+   ansible.builtin.shell: systemctl start nginx
 # - name: Create application directory
 #   ansible.builtin.file:
 #     path: /usr/share/nginx/html
@@ -51,8 +41,12 @@
 #     dest: /usr/share/nginx/html/
 #     remote_src: yes
   
-#- name: Start nginx service
-#  ansible.builtin.systemd_service:
-#    name: nginx
-#    state: restarted 
-#    enabled: yes
+ - name: Restart nginx servfice
+   ansible.builtin.shell: systemctl restart nginx
+     #name: nginx
+     #state: restarted
+     #enabled: yes  
+ - name: Enable service nginx and not touch the state
+   ansible.builtin.service:
+     name: nginx
+     enabled: yes    

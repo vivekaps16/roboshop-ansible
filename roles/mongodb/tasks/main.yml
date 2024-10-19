@@ -42,3 +42,8 @@
     name: mongod
     state: restarted 
     enabled: yes
+
+- name: Enable service mongodb and not touch the state
+  ansible.builtin.service:
+    name: mongod
+    enabled: yes    
