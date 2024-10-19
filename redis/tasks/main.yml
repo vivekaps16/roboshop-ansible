@@ -54,8 +54,8 @@
     state: restarted 
     enabled: yes
 
-- name: Status redis service
-  ansible.builtin.systemd_service:
-    name: redis
-    state: restatus
-    enabled: yes    
+#- name: Status redis service
+#  ansible.builtin.systemd_service:
+#    name: redis
+#    state: restatus
+#    enabled: yes    
