@@ -1,0 +1,70 @@
+#source common.sh
+#app_name=rabbitmq
+#
+#if [ -z "$1" ]; then
+#  echo INput Rabbitmq Password is missing
+#  exit 1
+#fi
+#
+#RABBITMQ_PASSWORD=$1
+#
+#print_heading "Copy RabbitMQ Repo file"
+#cp rabbitmq.repo /etc/yum.repos.d/rabbitmq.repo &>>$log_file
+#status_check $?
+#
+#print_heading "Install RabbitMQ Server"
+#dnf install rabbitmq-server -y &>>$log_file
+#status_check $?
+#
+#print_heading "Start RabbitMQ Service"
+#systemctl enable rabbitmq-server &>>$log_file
+#systemctl start rabbitmq-server &>>$log_file
+#status_check $?
+#
+#print_heading "Add Application User"
+#rabbitmqctl add_user roboshop $RABBITMQ_PASSWORD &>>$log_file
+#rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>$log_file
+#status_check $?
+#
+
+- name: Set Prompt
+  ansible.builtin.shell: set-prompt {{ app_name }}-{{ env }}
+
+- name: Copy rabbitmq repo file
+  ansible.builtin.copy:
+    src: rabbitmq.repo
+    dest: /etc/yum.repos.d/rabbitmq.repo
+
+- name: Install RabbitMQ Server"
+  ansible.builtin.dnf:
+    name: rabbitmq-server
+    state: installed
+
+- name: Enable service RabbitMQ- Server and not touch the state
+  ansible.builtin.service:
+    name: rabbitmq-server
+    enabled: yes  
+
+- name: Start rabbitmq service
+  ansible.builtin.systemd_service:
+    name: rabbitmq-server
+    state: start 
+    enabled: yes
+
+- name: Add rabbitmq user
+  community.rabbitmq.rabbitmq_user:
+    user: roboshop
+    password: roboshop123
+    vhost: / 
+    configure_priv: .*
+    read_priv: .*
+    write_priv: .*
+    state: present
+
+
+
+
+
+
+
+
