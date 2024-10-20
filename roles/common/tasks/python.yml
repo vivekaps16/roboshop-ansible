@@ -1,0 +1,22 @@
+- name: Install Maven
+  ansible.builtin.dnf:
+    name: "{{ item }}"
+    state: installed
+  loop:
+    - python3
+    - gcc
+    - python-devel
+
+- name: Load app prereqiuities
+  ansible.builtin.include_tasks:
+    file: app_prerequities.yml
+
+- name: Install Python Dependencies
+  community.general.npm: pip3 install -r requirements.txt
+  args:  
+    chdir: /app
+
+- name: Systemd setup
+  ansible.builtin.include_tasks:
+    file: systemd_setup.yml 
+
