@@ -1,8 +1,13 @@
+#- name: Copy the Service File
+#  ansible.builtin.templates:
+#    src: "{{ app_name }}.service"
+#    dest: /etc/systemd/system/{{ app_name }}.service
+
+
 - name: Copy the Service File
-  ansible.builtin.templates:
-    src: "{{ app_name }}.service"
+  ansible.builtin.copy:
+    content: "{{ app_name }}.service"
     dest: /etc/systemd/system/{{ app_name }}.service
-    
 
 - name: Start Application Service
   ansible.builtin.systemd_service:
