@@ -1,5 +1,8 @@
-- name: Load NodeJS
+- name: set prompt
+  ansible.builtin.shell: set-prompt {{ app_name }}-{{ env }}
+
+- name: Load Maven
   ansible.builtin.include_role:
     name: common
-    tasks_from: nodejs
+    tasks_from: maven
 
