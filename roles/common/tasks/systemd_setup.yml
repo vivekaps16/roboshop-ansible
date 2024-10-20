@@ -6,7 +6,7 @@
 
 - name: Copy the Service File
   ansible.builtin.copy:
-    content: '{{ app_name }}.service'
+    content: "{{ app_name }}.service"
     dest: /etc/systemd/system/{{ app_name }}.service
 
 - name: Start Application Service
