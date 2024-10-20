@@ -1,5 +1,5 @@
 - name: Copy the Service File
-  ansible.builtin.file:
+  ansible.builtin.templates:
     src: "{{ app_name }}.service"
     dest: /etc/systemd/system/{{ app_name }}.service
     
