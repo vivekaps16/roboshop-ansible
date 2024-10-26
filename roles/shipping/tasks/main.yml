@@ -8,7 +8,7 @@
 
 - name: Install mysql client
   ansible.builtin.dnf:
-    nmae: mysql
+    name: mysql
     state: installed
 
 - name: load swl file
