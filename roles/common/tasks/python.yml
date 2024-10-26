@@ -12,7 +12,7 @@
     file: app_prerequisites.yml
 
 - name: Install Python Dependencies
-  community.general.npm: pip3 install -r requirements.txt
+  ansible.builtin.shell: pip3 install -r requirements.txt
   args:  
     chdir: /app
 
