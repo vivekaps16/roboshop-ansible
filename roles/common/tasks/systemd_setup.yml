@@ -23,7 +23,7 @@
 - name: Start Application Service
   ansible.builtin.systemd_service:
     name: "{{ app_name }}"
-    daemon_reload:  yes
-    state: start
+    state: restarted
     enabled: yes
+    daemon_reload:  yes
     
