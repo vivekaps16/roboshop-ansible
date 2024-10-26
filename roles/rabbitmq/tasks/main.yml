@@ -31,7 +31,7 @@
   ansible.builtin.shell: set-prompt {{ app_name }}-{{ env }}
 
 - name: Copy rabbitmq repo file
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: rabbitmq.repo
     dest: /etc/yum.repos.d/rabbitmq.repo
 
