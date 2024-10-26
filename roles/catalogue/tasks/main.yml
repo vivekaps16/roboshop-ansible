@@ -31,7 +31,7 @@
   ansible.builtin.dnf:
     name: mongodb-mongosh
     state: installed
-    enabled: yes
+    #enabled: yes
 - name: Load Master Data
   ansible.builtin.shell: mongosh --host mongodb-{{ env }}.devopspractice.info </app/db/master-data.js
 
