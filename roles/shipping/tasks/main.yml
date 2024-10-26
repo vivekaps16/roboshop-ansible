@@ -12,7 +12,7 @@
     state: installed
 
 - name: load swl file
-  ansible.builtin.shell: mysql -h mysql-{{ env }}.devopspractice.info -uroot -pRoboShop@1 < /app/db/{{ item }}.sql
+  ansible.builtin.shell: mysql -h mysql-{{ env }}.devopspractice.info -uroot -pRoboshop@1 < /app/db/{{ item }}.sql
   loop: 
     - schema
     - app-user
