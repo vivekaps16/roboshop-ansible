@@ -1,9 +1,3 @@
-# roboshop-ansible
-roboshop-ansible
-
-
-==========================================================================================================
-
 54.84.42.225 | 172.31.95.123 | t2.micro | null
 [ ec2-user@workstation ~/roboshop-ansible ]$ sudo git pull ; ansible-playbook -i frontend-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=frontend -e env=dev roboshop-app.yml 
 Already up to date.
@@ -2501,28 +2495,4 @@ Connection to ec2-54-84-42-225.compute-1.amazonaws.com closed by remote host.
 Connection to ec2-54-84-42-225.compute-1.amazonaws.com closed.
 ┌─[✗]─[root@kk]─[/home/devops-practice/learn-terraform/roboshop-v1]
 └──╼ #
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
