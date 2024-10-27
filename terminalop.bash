@@ -2496,3 +2496,79 @@ Connection to ec2-54-84-42-225.compute-1.amazonaws.com closed.
 ┌─[✗]─[root@kk]─[/home/devops-practice/learn-terraform/roboshop-v1]
 └──╼ #
 
+  263  26/10/24 11:18:40 sudo git pull ; ansible-playbook -i user-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=user -e env=dev roboshop-app.yml 
+  264  26/10/24 11:45:17 sudo git pull ; ansible-playbook -i catalogue-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=catalogue -e env=dev roboshop-app.yml 
+  265  26/10/24 11:52:58 sudo git pull ; ansible-playbook -i cart-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=cart -e env=dev roboshop-app.yml 
+  266  26/10/24 11:57:44 sudo git pull ; ansible-playbook -i mysqldevopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=mysql -e env=dev roboshop-app.yml 
+  267  26/10/24 11:57:59 sudo git pull ; ansible-playbook -i mysql-devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=mysql -e env=dev roboshop-app.yml 
+  268  26/10/24 12:00:16 sudo git pull ; ansible-playbook -i mysql-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=mysql -e env=dev roboshop-app.yml 
+  269  26/10/24 12:02:04 sudo git pull ; ansible-playbook -i shipping-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=shipping -e env=dev roboshop-app.yml 
+  270  26/10/24 12:09:55 sudo git pull
+  271  26/10/24 12:10:45 sudo git pull ; ansible-playbook -i shipping-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=shipping -e env=dev roboshop-app.yml 
+  272  26/10/24 12:11:50 ls
+  273  26/10/24 12:11:57 cd roles/shipping/
+  274  26/10/24 12:11:57 ls
+  275  26/10/24 12:12:04 ll templates/
+  276  26/10/24 12:12:53 cd ..
+  277  26/10/24 12:12:56 ls
+  278  26/10/24 12:12:58 sudo git pull ; ansible-playbook -i shipping-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=shipping -e env=dev roboshop-app.yml 
+  279  26/10/24 12:34:45 sudo git pull ; ansible-playbook -i rabbitmq-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=rabbitmq -e env=dev roboshop-app.yml 
+  280  26/10/24 12:46:37 sudo git pull ; ansible-playbook -i payment-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=payment -e env=dev roboshop-app.yml 
+  281  26/10/24 12:59:47 sudo git pull ; ansible-playbook -i dispatch-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=dispatch -e env=dev roboshop-app.yml 
+  282  26/10/24 10:03:41 history 
+  283  26/10/24 10:04:04 ls
+  284  26/10/24 10:04:11 cd roboshop-ansible/
+  285  26/10/24 10:04:12 ls
+  286  26/10/24 10:04:18 sudo git pull
+  287  26/10/24 10:04:24 ansible-playbook -i /tmp/inv frontend-dev.devopspractice.info -e ansible_user=ec2-user -e ansible_password=DevOps321 -e env=dev frontend.yaml --check
+  288  26/10/24 10:04:45 ansible-playbook -i frontend-dev.devopspractice.info -e ansible_user=ec2-user -e ansible_password=DevOps321 -e env=dev frontend.yaml --check
+  289  26/10/24 10:05:14 ansible-playbook frontend-dev.devopspractice.info -e ansible_user=ec2-user -e ansible_password=DevOps321 -e env=dev frontend.yaml --check
+  290  26/10/24 10:05:23 history 
+  291  26/10/24 10:05:48 cat /tmp/inv 
+  292  26/10/24 10:06:21 echo 172.31.41.103 >>/tmp/inv 
+  293  26/10/24 10:06:24 cat /tmp/inv 
+  294  26/10/24 10:06:32 echo 172.31.41.103 >/tmp/inv 
+  295  26/10/24 10:06:34 cat /tmp/inv 
+  296  26/10/24 10:06:40 ansible-playbook -i frontend-dev.devopspractice.info -e ansible_user=ec2-user -e ansible_password=DevOps321 -e env=dev frontend.yaml --check
+  297  26/10/24 10:06:45 ls
+  298  26/10/24 10:07:23 cat frontend.yaml 
+  299  26/10/24 10:07:43 sudo vim /tmp/inv 
+  300  26/10/24 10:08:11 ansible-playbook -i frontend-dev.devopspractice.info -e ansible_user=ec2-user -e ansible_password=DevOps321 -e env=dev frontend.yaml --check
+  301  26/10/24 10:09:45 ansible-playbook -i frontend-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e env=dev frontend.yaml --check
+  302  26/10/24 10:11:45 ansible-playbook -i frontend-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e env=dev frontend.yaml
+  303  26/10/24 10:14:43 ls
+  304  26/10/24 10:14:51 cd roles/
+  305  26/10/24 10:14:52 ls
+  306  26/10/24 10:14:56 cd ..
+  307  26/10/24 10:15:05 ls
+  308  26/10/24 10:15:15 ansible-playbook -i mongodb-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e env=dev roboshop-app.yml 
+  309  26/10/24 10:17:26 ls
+  310  26/10/24 10:17:46 history 
+  311  26/10/24 10:18:20 cat roboshop-app.yml 
+  312  26/10/24 10:18:50 ansible-playbook -i frontend-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e env=dev roboshop-app.yml 
+  313  26/10/24 10:20:57 sudo git pull ; ansible-playbook -i frontend-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e env=dev roboshop-app.yml 
+  314  26/10/24 10:22:06 sudo git pull ; ansible-playbook -i frontend-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=frontend -e env=dev roboshop-app.yml 
+  315  26/10/24 10:23:44 sudo git pull ; ansible-playbook -i mongodb-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=mongodb -e env=dev roboshop-app.yml 
+  316  26/10/24 10:26:27 sudo git pull ; ansible-playbook -i catalogue-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=catalogue -e env=dev roboshop-app.yml 
+  317  26/10/24 10:46:27 sudo git pull ; ansible-playbook -i redis-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=redis -e env=dev roboshop-app.yml 
+  318  26/10/24 10:51:07 sudo git pull ; ansible-playbook -i user-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=user -e env=dev roboshop-app.yml 
+  361  26/10/24 11:18:40 sudo git pull ; ansible-playbook -i user-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=user -e env=dev roboshop-app.yml 
+  362  26/10/24 11:45:17 sudo git pull ; ansible-playbook -i catalogue-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=catalogue -e env=dev roboshop-app.yml 
+  363  26/10/24 11:52:58 sudo git pull ; ansible-playbook -i cart-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=cart -e env=dev roboshop-app.yml 
+  364  26/10/24 11:57:44 sudo git pull ; ansible-playbook -i mysqldevopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=mysql -e env=dev roboshop-app.yml 
+  365  26/10/24 11:57:59 sudo git pull ; ansible-playbook -i mysql-devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=mysql -e env=dev roboshop-app.yml 
+  366  26/10/24 12:00:16 sudo git pull ; ansible-playbook -i mysql-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=mysql -e env=dev roboshop-app.yml 
+  367  26/10/24 12:02:04 sudo git pull ; ansible-playbook -i shipping-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=shipping -e env=dev roboshop-app.yml 
+  368  26/10/24 12:09:55 sudo git pull
+  369  26/10/24 12:10:45 sudo git pull ; ansible-playbook -i shipping-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=shipping -e env=dev roboshop-app.yml 
+  370  26/10/24 12:11:50 ls
+  371  26/10/24 12:11:57 cd roles/shipping/
+  372  26/10/24 12:11:57 ls
+  373  26/10/24 12:12:04 ll templates/
+  374  26/10/24 12:12:53 cd ..
+  375  26/10/24 12:12:56 ls
+  376  26/10/24 12:12:58 sudo git pull ; ansible-playbook -i shipping-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=shipping -e env=dev roboshop-app.yml 
+  377  26/10/24 12:34:45 sudo git pull ; ansible-playbook -i rabbitmq-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=rabbitmq -e env=dev roboshop-app.yml 
+  378  26/10/24 12:46:37 sudo git pull ; ansible-playbook -i payment-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=payment -e env=dev roboshop-app.yml 
+  379  26/10/24 12:59:47 sudo git pull ; ansible-playbook -i dispatch-dev.devopspractice.info, -e ansible_user=ec2-user -e ansible_password=DevOps321 -e app_name=dispatch -e env=dev roboshop-app.yml 
+  380  27/10/24 08:22:24 aws ec2 describe-instance-status
